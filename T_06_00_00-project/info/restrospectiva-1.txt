@@ -1,0 +1,29 @@
+Project planing and execution of first week:
+
+| Group Member | M   | T  | W  | T  | F  | S  | S  | Planned tasks    | Implemented tasks|
+|--------------|-----|----|----|----|----|----|----|------------------|------------------|
+| BernardoMG   |  0  |  0 |  0 |  0 |  0 |  0 |  0 |        -         |        -         |
+| JoaoRPF      |  0  |  0 |  0 |  0 |  0 |  0 |  0 |        -         |        -         |
+| platzord     |  0  |  0 |  0 |  0 |  0 |  0 |  0 |        -         |        -         |
+| rmcristovao  |  0  |  0 |  0 |  0 |  0 |  0 |  0 |        -         |        -         | 
+| ruifurtado   |  0  |  0 |  0 |  0 |  0 |  0 |  0 |        -         |        -         |
+| vascobailao  |  0  |  0 |  0 |  0 |  0 |  0 |  0 |        -         |        -         |
+
+
+
+Planeamos não fazer nada nesta primeira semanada devido a testes que todos tivemos.
+
+
+Project planing and execution of the second week:
+
+| Group Member | M   | T  | W  | T  | F  | S  | S  | Planned tasks    | Implemented tasks|
+|--------------|-----|----|----|----|----|----|----|------------------|------------------|
+| BernardoMG   |  0  |  0 |  0 |  0 |  0 |  0 |  0 |        -         |         -        |
+| JoaoRPF      |  0  |  0 |  0 |  0 |  2 |  0 |  2 | 29               |         -        |
+| platzord     |  0  |  0 |  0 |  0 |  0 |  3 |  2 | 28               |         28       |
+| rmcristovao  |   0 | 0  | 0  | 0  | 2  | 3  |  2 | 26               |         -        | 
+| ruifurtado   |  0  |  0 |  0 |  0 |  0 |  0 |  0 |         -        |         -        |
+| vascobailao  |  0  |  0 |  0 |  0 |  0 |  0 |  0 |         -        |         -        |
+
+
+

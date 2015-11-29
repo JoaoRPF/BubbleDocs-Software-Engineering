@@ -1,0 +1,197 @@
+package pt.tecnico.bubbledocs.domain;
+
+
+
+class BubbleDocs;
+
+class Utilizador{
+	String username;
+	String nome;
+	String password;
+    String token;
+    String email;
+	 
+}
+
+class RootUser extends Utilizador {}
+
+class FolhaCalculo {
+	int identificador;
+	String nome;
+	LocalDate dataCriacao;	
+	int numLinhas;
+	int numColunas;
+}
+
+
+class Celula {
+	int linha;
+	int coluna;
+  boolean protegida;
+}
+
+class Conteudo; 
+
+class Argumento extends Conteudo {}
+
+class Literal extends Argumento {
+  int valor;
+}
+
+class Referencia extends Argumento {
+  int linha; 
+  int coluna;
+}
+
+class Interval extends Argumento{
+  String cellInicial;
+  String cellFinal;
+}
+
+
+class FuncaoBinaria extends Conteudo {
+	String funcao;	
+}
+
+
+class FuncaoIntervalo extends Conteudo {
+  String funcaoIntervalo;  
+}
+ 
+class Add extends FuncaoBinaria {}
+class Mul extends FuncaoBinaria {}
+class Div extends FuncaoBinaria {}
+class Sub extends FuncaoBinaria {}
+
+class Avg extends FuncaoIntervalo {}
+class Prd extends FuncaoIntervalo {}
+
+
+class Sessao {
+  String userName;
+  DateTime duracao;
+  String password;
+  String userToken;
+} 
+
+relation DomainRootHasBubbleDocsApplication {
+  .pt.ist.fenixframework.DomainRoot playsRole root {
+    multiplicity 0..1;
+  }
+  BubbleDocs playsRole bubbledocs {
+    multiplicity 0..1;
+  }
+}
+
+
+relation BubbleDocsContainsUtilizadores {
+  BubbleDocs playsRole bubbledocs {
+  	multiplicity 1;
+  }
+  Utilizador playsRole utilizador {
+    multiplicity *;
+  }
+}
+
+relation FolhaCaculoContainsUtilizadores { 
+  FolhaCalculo playsRole folhacalculo{
+    multiplicity *;
+  }
+  Utilizador playsRole utilizador {
+    multiplicity 1;
+  }
+}
+
+relation UtilizadorContainsFolhaCalculoEscrever{
+  Utilizador playsRole escritor{
+    multiplicity *;
+  }
+  FolhaCalculo playsRole folhacalculoEscrever{
+    multiplicity *;
+  }
+}
+relation UtilizadorContainsFolhaCalculoLer{
+  Utilizador playsRole leitor{
+    multiplicity *;
+  }
+  FolhaCalculo playsRole folhacalculoLer{
+    multiplicity *;
+  }
+}
+
+relation BubbleDocsContainsFolhaCalculo {
+  BubbleDocs playsRole bubbledocs;
+  FolhaCalculo playsRole folhacalculo {
+    multiplicity *;
+  }
+}
+
+relation FolhaCalculoContainsCelulas {
+  FolhaCalculo playsRole folhacalculo;
+  Celula playsRole celula {
+    multiplicity *;
+  }
+}
+
+relation CelulasContainsConteudo {
+  Celula playsRole celula;
+  Conteudo playsRole conteudo {
+    multiplicity 0..1;
+  }
+}
+
+relation ReferenciaContainsCelula {
+  Referencia playsRole referencia{
+  	multiplicity *; 
+  }
+  Celula playsRole celula2 {
+    multiplicity 1;
+  }
+}
+
+relation FuncaoBinarioContainsArgumento {
+  FuncaoBinaria playsRole funcaoBinaria{
+    multiplicity 1; 
+  }
+  Argumento playsRole argumento {
+    multiplicity 1;
+  }
+}
+
+relation FuncaoBinarioContainsArgumento2 {
+  FuncaoBinaria playsRole funcaoBinaria2 {
+    multiplicity 1; 
+  }
+  Argumento playsRole argumento2 {
+    multiplicity 1;
+  }
+}
+
+relation FuncaoIntervaloContainsArgumento {
+  FuncaoIntervalo playsRole funcaoIntervalo{
+    multiplicity 1; 
+  }
+  Argumento playsRole arg{
+    multiplicity 1;
+  }
+}
+
+relation BubbleDocsContainsSessao {
+  BubbleDocs playsRole bubbledocs{
+    multiplicity 1;
+  }
+  Sessao playsRole sessao{
+    multiplicity *;
+  }
+}
+
+relation SessaocontainsUtilizador{
+	Sessao playsRole sessao{
+		multiplicity 1;
+	}
+	Utilizador playsRole utilizador{
+		multiplicity 1;
+	}
+}
+
+
